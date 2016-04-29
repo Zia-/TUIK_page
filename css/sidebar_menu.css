@@ -165,6 +165,9 @@
     /*left: 1000px;*/
 }
 
+.toggle.ios, .toggle-on.ios, .toggle-off.ios { border-radius: 20px; }
+.toggle.ios .toggle-handle { border-radius: 20px; }
+
 /*.mapbox-maplogo {
       position:absolute;
       display:block;

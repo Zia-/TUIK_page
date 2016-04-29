@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
   <link href='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.css' rel='stylesheet' />
+  <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
   <link href="css/sidebar_menu.css" rel="stylesheet">
 
 </head>
@@ -36,13 +37,13 @@
                   <button type="button" class="btn btn-default"><span class="fa fa-pencil"></span></button>
                 </div>
                 <div class="btn-group" role="group" aria-label="...">
-                  <button type="button" class="btn btn-default"><span class="fa fa-print"></span></button>
+                  <button type="button" class="btn btn-default"><span class="fa fa-object-ungroup"></span></button>
                 </div>
                 <div class="btn-group" role="group" aria-label="...">
                   <button type="button" class="btn btn-default"><span class="fa fa-line-chart"></span></button>
                 </div>
                 <div class="btn-group" role="group" aria-label="...">
-                  <button type="button" class="btn btn-default"><span class="fa fa-pie-chart"></span></button>
+                  <button type="button" class="btn btn-default"><span class="fa fa-pie-chart" data-toggle="modal" data-target="#piechart_Modal" ></span></button>
                 </div>
                 <div class="btn-group" role="group" aria-label="...">
                   <button type="button" class="btn btn-default"><span class="fa fa-area-chart"></span></button>
@@ -51,30 +52,55 @@
                   <button type="button" class="btn btn-default"><span class="fa fa-bar-chart"></span></button>
                 </div>
                 <div class="btn-group" role="group" aria-label="...">
-                  <button type="button" class="btn btn-default"><span class="fa fa-object-ungroup"></span></button>
-                </div>
-                <div class="btn-group" role="group" aria-label="...">
                   <button type="button" class="btn btn-default"><span class="fa fa-table"></span></button>
                 </div>
                 <div class="btn-group" role="group" aria-label="...">
                   <button type="button" class="btn btn-default"><span class="fa fa-file"></span></button>
                 </div>
-
+                <div class="btn-group" role="group" aria-label="...">
+                  <button type="button" class="btn btn-default"><span class="fa fa-print"></span></button>
+                </div>
     </nav>
+
+
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="piechart_Modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Pie Chart</h4>
+          </div>
+          <div class="modal-body">
+            <canvas id="chart-area" width="400" height="400"></canvas>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Reset</button>
+            <button type="button" class="btn btn-primary">Save Chart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
     <div id="wrapper">
         <!-- Sidebar -->
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav nav-pills nav-stacked" id="menu">
 
                 <li class="active">
-                    <a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-globe fa-stack-1x "></i></span> National Accounts</a>
+                    <a><span class="fa-stack fa-lg pull-left"><i class="fa fa-globe fa-stack-1x "></i></span> National Accounts</a>
                        <!-- <ul class="nav-pills nav-stacked" style="list-style-type:none;">
                         <li><a href="#">link1</a></li>
                         <li><a href="#">link2</a></li>
                     </ul> -->
                 </li>
                 <li>
-                    <a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-briefcase fa-stack-1x "></i></span> Un/Employment, Wages</a>
+                    <a><span class="fa-stack fa-lg pull-left"><i class="fa fa-briefcase fa-stack-1x "></i></span> Un/Employment, Wages</a>
                     <!-- <ul class="nav-pills nav-stacked" style="list-style-type:none;">
                         <li><a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-flag fa-stack-1x "></i></span>link1</a></li>
                         <li><a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-flag fa-stack-1x "></i></span>link2</a></li>
@@ -82,52 +108,109 @@
                     </ul> -->
                 </li>
                 <li>
-                    <a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-money fa-stack-1x "></i></span>Inflation, Price</a>
+                    <a><span class="fa-stack fa-lg pull-left"><i class="fa fa-money fa-stack-1x "></i></span>Inflation, Price</a>
                 </li>
                 <li>
-                    <a href="#"> <span class="fa-stack fa-lg pull-left"><i class="fa fa-ship fa-stack-1x "></i></span>Foreign Trade</a>
+                    <a> <span class="fa-stack fa-lg pull-left"><i class="fa fa-ship fa-stack-1x "></i></span>Foreign Trade</a>
                 </li>
                 <li>
-                    <a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-home fa-stack-1x "></i></span>Construction, Housing</a>
+                    <a><span class="fa-stack fa-lg pull-left"><i class="fa fa-home fa-stack-1x "></i></span>Construction, Housing</a>
                 </li>
                 <li>
-                    <a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-industry fa-stack-1x "></i></span>Industry</a>
+                    <a><span class="fa-stack fa-lg pull-left"><i class="fa fa-industry fa-stack-1x "></i></span>Industry</a>
                 </li>
                 <li>
-                    <a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-truck fa-stack-1x "></i></span>Trade, Services</a>
+                    <a><span class="fa-stack fa-lg pull-left"><i class="fa fa-truck fa-stack-1x "></i></span>Trade, Services</a>
                 </li>
                 <li>
-                    <a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-pagelines fa-stack-1x "></i></span>Agriculture</a>
+                    <a><span class="fa-stack fa-lg pull-left"><i class="fa fa-pagelines fa-stack-1x "></i></span>Agriculture</a>
+                </li>
+                <li data-toggle="modal" data-target="#pop_demo_Model">
+                    <a><span class="fa-stack fa-lg pull-left"><i class="fa fa-users fa-stack-1x "></i></span>Population, Demography</a>
                 </li>
                 <li>
-                    <a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-users fa-stack-1x "></i></span>Population, Demography</a>
+                    <a><span class="fa-stack fa-lg pull-left"><i class="fa fa-bolt fa-stack-1x "></i></span>Environment, Energy</a>
                 </li>
                 <li>
-                    <a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-bolt fa-stack-1x "></i></span>Environment, Energy</a>
+                    <a><span class="fa-stack fa-lg pull-left"><i class="fa fa-shopping-basket fa-stack-1x "></i></span>Inc., Living, Consump., Pov.</a>
                 </li>
                 <li>
-                    <a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-shopping-basket fa-stack-1x "></i></span>Inc., Living, Consump., Pov.</a>
+                    <a><span class="fa-stack fa-lg pull-left"><i class="fa fa-futbol-o fa-stack-1x "></i></span>Edu., Culture, Sport, Tourism</a>
                 </li>
                 <li>
-                    <a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-futbol-o fa-stack-1x "></i></span>Edu., Culture, Sport, Tourism</a>
+                    <a><span class="fa-stack fa-lg pull-left"><i class="fa fa-medkit fa-stack-1x "></i></span>Health, Social Protection</a>
                 </li>
                 <li>
-                    <a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-medkit fa-stack-1x "></i></span>Health, Social Protection</a>
+                    <a><span class="fa-stack fa-lg pull-left"><i class="fa fa-flask fa-stack-1x "></i></span>Science, Techn., Info. Society</a>
                 </li>
                 <li>
-                    <a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-flask fa-stack-1x "></i></span>Science, Techn., Info. Society</a>
+                    <a><span class="fa-stack fa-lg pull-left"><i class="fa fa-balance-scale fa-stack-1x "></i></span>Justice, Election</a>
                 </li>
                 <li>
-                    <a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-balance-scale fa-stack-1x "></i></span>Justice, Election</a>
+                    <a><span class="fa-stack fa-lg pull-left"><i class="fa fa-train fa-stack-1x "></i></span>Transport/Communication</a>
                 </li>
                 <li>
-                    <a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-train fa-stack-1x "></i></span>Transport/Communication</a>
-                </li>
-                <li>
-                    <a href=""><span class="fa-stack fa-lg pull-left"><i class="fa fa-credit-card fa-stack-1x "></i></span>Economic Confidence</a>
+                    <a><span class="fa-stack fa-lg pull-left"><i class="fa fa-credit-card fa-stack-1x "></i></span>Economic Confidence</a>
                 </li>
             </ul>
         </div><!-- /#sidebar-wrapper -->
+
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="pop_demo_Model" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Population and Demography</h4>
+              </div>
+              <div class="modal-body">
+                Population Projections<br>
+                <input type="checkbox" unchecked data-toggle="toggle" data-style="ios" data-size="mini">Demographic Indicators<br>
+                <input type="checkbox" unchecked data-toggle="toggle" data-style="ios" data-size="mini">Median Age by Provinces and Sex<br>
+                <input type="checkbox" unchecked data-toggle="toggle" data-style="ios" data-size="mini">Population and Annual Average Growth Rate by Provinces<br>
+                <input type="checkbox" unchecked data-toggle="toggle" data-style="ios" data-size="mini">Population by Age and Sex<br>
+                <input type="checkbox" unchecked data-toggle="toggle" data-style="ios" data-size="mini">Population by Years<br>
+                <input type="checkbox" unchecked data-toggle="toggle" data-style="ios" data-size="mini">Populaion of Selected Age Groups by Scenarios<br>
+                <input type="checkbox" unchecked data-toggle="toggle" data-style="ios" data-size="mini">Total Population of Turkey by Scenarios<br>
+                Population Statistics<br>
+                <input type="checkbox" unchecked data-toggle="toggle" data-style="ios" data-size="mini">Provincial in-Migration, Out Migration, Net Migration, Rate of Net Migration, Census of Population - ABPRS<br>
+                <input type="checkbox" unchecked data-toggle="toggle" data-style="ios" data-size="mini">Annual Growth Rate and Population Density of Provinces by Years<br>
+                <input type="checkbox" unchecked data-toggle="toggle" data-style="ios" data-size="mini">Households by piped water system, toilet and bathroom facilities of the dwelling and provinces, 2011<br>
+                <input type="checkbox" unchecked data-toggle="toggle" data-style="ios" data-size="mini">Median Age by Years and Sex, Census of Population - ABPRS<br>
+                <input type="checkbox" unchecked data-toggle="toggle" data-style="ios" data-size="mini">Population by Years, Age Group and Sex, Census of Population - ABPRS<br>
+                <input type="checkbox" unchecked data-toggle="toggle" data-style="ios" data-size="mini">Population of Province / District Centers and Towns / Villages by Years and Sex, Census of Population - ABPRS<br>
+                <input type="checkbox" unchecked data-toggle="toggle" data-style="ios" data-size="mini">Population of Provinces by Years<br>
+                Social Structure and Gender Statistics<br>
+                <input type="checkbox" unchecked data-toggle="toggle" data-style="ios" data-size="mini">General Level of Happiness<br>
+                <input type="checkbox" unchecked data-toggle="toggle" data-style="ios" data-size="mini">Level of Happiness by Province and Sex<br>
+                <input type="checkbox" unchecked data-toggle="toggle" data-style="ios" data-size="mini">Level of Hope by Province<br>
+                <input type="checkbox" unchecked data-toggle="toggle" data-style="ios" data-size="mini">Level of Hope by Sex<br>
+                <input type="checkbox" unchecked data-toggle="toggle" data-style="ios" data-size="mini">Level of Satisfaction From Public Services by Province<br>
+                <input type="checkbox" unchecked data-toggle="toggle" data-style="ios" data-size="mini">Overall Satisfaction From Public Services<br>
+                <input type="checkbox" unchecked data-toggle="toggle" data-style="ios" data-size="mini">Source of Happiness<br>
+                <input type="checkbox" unchecked data-toggle="toggle" data-style="ios" data-size="mini">Source of Happiness by Province<br>
+                Vital Statistics<br>
+                <input type="checkbox" unchecked data-toggle="toggle" data-style="ios" data-size="mini">Basic Fertility and Mortality Indicators<br>
+                <input type="checkbox" unchecked data-toggle="toggle" data-style="ios" data-size="mini">Number of Marriages, Crude Marriage Rate, Number of Divorces and Crude Divorce Rate<br>
+                <input type="checkbox" unchecked data-toggle="toggle" data-style="ios" data-size="mini">Number of suicides and crude suicide rate<br>
+                Life Tables<br>
+                <input type="checkbox" unchecked data-toggle="toggle" data-style="ios" data-size="mini">Life expectancy at birth by provinces and sex<br>
+                <input type="checkbox" unchecked data-toggle="toggle" data-style="ios" data-size="mini">Life expectancy at birth in European countries by sex<br>
+                <input type="checkbox" unchecked data-toggle="toggle" data-style="ios" data-size="mini">Single age life table for Turkey by sex<br>
+              </div>
+              <!-- <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+              </div> -->
+            </div>
+          </div>
+        </div>
+
+
+
+
         <!-- Page Content -->
         <div id="map-div">
           <!-- <a href="http://mapbox.com/about/maps" class='mapbox-maplogo' target="_blank">Mapbox</a> -->
@@ -148,6 +231,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script src='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.js'></script>
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.0.0/Chart.js"></script>
     <script src="js/sidebar_menu.js"></script>
     <script>
       L.mapbox.accessToken = 'pk.eyJ1IjoiemlhLW0iLCJhIjoiQjM5aVpfTSJ9.s_U7YxQCK-Zq5SaJemH5bA';
@@ -163,5 +248,7 @@
       });
       map.fitBounds(bounds)
     </script>
+    <script src="js/test_populationgeojson.js"></script>
+    <script src="js/test_chartpopulation.js"></script>
 </body>
 </html>
