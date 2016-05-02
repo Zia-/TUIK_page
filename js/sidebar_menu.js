@@ -30,4 +30,11 @@ $('#menu ul').hide();
       }
     );
   }
-$(document).ready(function() {initMenu();});
+$(document).ready(function() {
+  initMenu();
+  //Subtracting 50px for navbar and for some reasons mapbox adds
+  var height = $(window).height() - 51;
+  $("#sidebar-wrapper").height(height);
+  //40px to the height so subtracting that as well
+  $("#map-div").height(height - 40);
+});
