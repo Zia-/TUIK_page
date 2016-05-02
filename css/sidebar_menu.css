@@ -1,14 +1,13 @@
 /* Toggle Styles */
 /*html,body { height: 100%; margin: 0px; padding: 0px; }*/
 
+body {
+    overflow: hidden;
+}
+
  #wrapper {
     padding-left: 0;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
     overflow: hidden;
-    /*height: 100%;*/
 }
 
 #wrapper.toggled {
@@ -17,13 +16,14 @@
 }
 
 #sidebar-wrapper {
-    z-index: 1000;
+    z-index: 2000;
     position: absolute;
     left: 250px;
     width: 0;
     height: 100%;
     margin-left: -250px;
     overflow-y: auto;
+    overflow-x: hidden;
     background: #000;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
@@ -38,7 +38,7 @@
 #map-div {
     position: absolute;
     /*background-color: red;*/
-    height: 610px;
+    /*height: 610px;*/
     padding: 15px;
     width: 100%;
     overflow-x: hidden;
@@ -54,6 +54,11 @@
 .fixed-brand{
     width: auto;
 }
+
+.btn-container {
+    margin-top: 8px !important;
+}
+
 /* Sidebar Styles */
 
 .sidebar-nav {
@@ -107,6 +112,10 @@
     margin:0;
 }
 
+i.fa.fa-stack-1x {
+    left: -8px;
+}
+
 @media(min-width:768px) {
     #wrapper {
         padding-left: 250px;
@@ -119,15 +128,15 @@
     }
 
     #sidebar-wrapper {
-        width: 250px;
+        width: 50px;
     }
 
-    #wrapper.toggled #sidebar-wrapper {
+    /*#wrapper.toggled #sidebar-wrapper {
         width: 250px;
     }
     #wrapper.toggled-2 #sidebar-wrapper {
         width: 50px;
-    }
+    }*/
     #wrapper.toggled-2 #sidebar-wrapper:hover {
         width: 250px;
     }
@@ -136,10 +145,6 @@
     #map-div {
         padding: 20px;
         position: relative;
-        -webkit-transition: all 0.5s ease;
-        -moz-transition: all 0.5s ease;
-        -o-transition: all 0.5s ease;
-        transition: all 0.5s ease;
     }
 
     #wrapper.toggled #map-div {
@@ -151,10 +156,6 @@
         position: relative;
         margin-right: 0;
         margin-left: -200px;
-        -webkit-transition: all 0.5s ease;
-        -moz-transition: all 0.5s ease;
-        -o-transition: all 0.5s ease;
-        transition: all 0.5s ease;
         width: auto;
 
     }
