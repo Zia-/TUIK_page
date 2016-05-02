@@ -128,15 +128,15 @@ i.fa.fa-stack-1x {
     }
 
     #sidebar-wrapper {
-        width: 250px;
+        width: 50px;
     }
 
-    #wrapper.toggled #sidebar-wrapper {
+    /*#wrapper.toggled #sidebar-wrapper {
         width: 250px;
     }
     #wrapper.toggled-2 #sidebar-wrapper {
         width: 50px;
-    }
+    }*/
     #wrapper.toggled-2 #sidebar-wrapper:hover {
         width: 250px;
     }
