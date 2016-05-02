@@ -64,6 +64,10 @@ body {
 .btn-container {
     margin-top: 5px !important;
 }
+
+i.fa.fa-stack-1x {
+    left: -8px;
+}
 /* Sidebar Styles */
 
 .sidebar-nav {
