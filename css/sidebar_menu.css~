@@ -112,10 +112,6 @@ body {
     margin:0;
 }
 
-i.fa.fa-stack-1x {
-    left: -8px;
-}
-
 @media(min-width:768px) {
     #wrapper {
         padding-left: 250px;
