@@ -10,10 +10,10 @@
 // });
 
 $("#wrapper").toggleClass("toggled-2");
-$('#menu ul').hide();
+// $('#menu ul').hide();
 
  function initMenu() {
-  $('#menu ul').hide();
+  // $('#menu ul').hide();
   $('#menu ul').children('.current').parent().show();
   //$('#menu ul:first').show();
   $('#menu li a').click(
