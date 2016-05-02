@@ -60,6 +60,10 @@ body {
 .fixed-brand{
     width: auto;
 }
+
+.btn-container {
+    margin-top: 5px !important;
+}
 /* Sidebar Styles */
 
 .sidebar-nav {
