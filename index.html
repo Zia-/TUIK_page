@@ -13,6 +13,8 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
   <link href='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.css' rel='stylesheet' />
   <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+  <link href='css/bootstrap-glyphicons-master/css/bootstrap.icon-large.min.css' rel='stylesheet' />
+  <link href='css/bootstrap-glyphicons-all-master/glyphicons-free.css' rel='stylesheet' />
   <link href="css/sidebar_menu.css" rel="stylesheet">
 
 </head>
@@ -34,32 +36,54 @@
                 </div> -->
                 <!-- bs-example-navbar-collapse-1 -->
                 <div class="btn-container">
+                  <!-- Following are draw buttons -->
                   <div class="btn-group" role="group" aria-label="...">
-                    <button type="button" class="btn btn-default"><span class="fa fa-pencil"></span></button>
+                    <button title="Draw Freehand" data-placement='bottom' data-toggle="tooltip" type="button" class="btn btn-default toolbar"><span class="fa fa-pencil"></span></button>
                   </div>
                   <div class="btn-group" role="group" aria-label="...">
-                    <button type="button" class="btn btn-default"><span class="fa fa-object-ungroup"></span></button>
+                    <button title="Draw Point" data-placement='bottom' data-toggle="tooltip" type="button" class="btn btn-default toolbar"><span class="glyphicon glyphicon-pushpin"></span></button>
                   </div>
                   <div class="btn-group" role="group" aria-label="...">
-                    <button type="button" class="btn btn-default"><span class="fa fa-line-chart"></span></button>
+                    <button title="Draw Line" data-placement='bottom' data-toggle="tooltip" type="button" class="btn btn-default toolbar"><span class="glyphicon glyphicon-vector-path-line"></i></button>
                   </div>
                   <div class="btn-group" role="group" aria-label="...">
-                    <button type="button" class="btn btn-default"  data-toggle="modal" data-target="#piechart_Modal"><span class="fa fa-pie-chart"></span></button>
+                    <button title="Draw Polygon" data-placement='bottom' data-toggle="tooltip" type="button" class="btn btn-default toolbar"><span class="glyphicon glyphicon-vector-path-polygon"></i></button>
                   </div>
                   <div class="btn-group" role="group" aria-label="...">
-                    <button type="button" class="btn btn-default"><span class="fa fa-area-chart"></span></button>
+                    <button title="Clear Shapes" data-placement='bottom' data-toggle="tooltip" type="button" class="btn btn-default toolbar"><span class="fa fa-times"></i></button>
+                  </div>
+                  <div style="width:30px;" class="btn-group" role="group" aria-label="..."></div>
+                  <!-- Following are calculate buttons -->
+                  <div class="btn-group" role="group" aria-label="...">
+                    <button title="Calculate Length" data-placement='bottom' data-toggle="tooltip" type="button" class="btn btn-default toolbar"><span class="glyphicon glyphicon-ruller"></i></button>
                   </div>
                   <div class="btn-group" role="group" aria-label="...">
-                    <button type="button" class="btn btn-default"><span class="fa fa-bar-chart"></span></button>
+                    <button title="Calculate Area" data-placement='bottom' data-toggle="tooltip" type="button" class="btn btn-default toolbar"><span class="glyphicon glyphicon-vector-path-square"></i></button>
+                  </div>
+                  <div style="width:30px;" class="btn-group" role="group" aria-label="..."></div>
+                  <!-- Following are charts -->
+                  <div class="btn-group" role="group" aria-label="...">
+                    <button title="Line Chart" data-placement='bottom' data-toggle="tooltip" type="button" class="btn btn-default toolbar"><span class="fa fa-line-chart"></span></button>
                   </div>
                   <div class="btn-group" role="group" aria-label="...">
-                    <button type="button" class="btn btn-default"><span class="fa fa-table"></span></button>
+                    <button title="Pie Chart" data-placement='bottom' data-toggle="tooltip" type="button" class="btn btn-default toolbar"  data-toggle="modal" data-target="#piechart_Modal"><span class="fa fa-pie-chart"></span></button>
                   </div>
                   <div class="btn-group" role="group" aria-label="...">
-                    <button type="button" class="btn btn-default"><span class="fa fa-file"></span></button>
+                    <button title="Area Chart" data-placement='bottom' data-toggle="tooltip" type="button" class="btn btn-default toolbar"><span class="fa fa-area-chart"></span></button>
                   </div>
                   <div class="btn-group" role="group" aria-label="...">
-                    <button type="button" class="btn btn-default"><span class="fa fa-print"></span></button>
+                    <button title="Bar Chart" data-placement='bottom' data-toggle="tooltip" type="button" class="btn btn-default toolbar"><span class="fa fa-bar-chart"></span></button>
+                  </div>
+                  <div style="width:30px;" class="btn-group" role="group" aria-label="..."></div>
+                  <!-- Following are print and save buttons -->
+                  <div class="btn-group" role="group" aria-label="...">
+                    <button title="View Excel" data-placement='bottom' data-toggle="tooltip" type="button" class="btn btn-default toolbar"><span class="fa fa-table"></span></button>
+                  </div>
+                  <div class="btn-group" role="group" aria-label="...">
+                    <button title="Download Excel" data-placement='bottom' data-toggle="tooltip" type="button" class="btn btn-default toolbar"><span class="fa fa-file"></span></button>
+                  </div>
+                  <div class="btn-group" role="group" aria-label="...">
+                    <button title="Print Map" data-placement='bottom' data-toggle="tooltip" type="button" class="btn btn-default toolbar"><span class="fa fa-print"></span></button>
                   </div>
                 </div>
     </nav>
@@ -236,6 +260,10 @@
     <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.0.0/Chart.js"></script>
     <script src="js/sidebar_menu.js"></script>
+    <script>
+    // This script is to make toolbar button title popup functional
+    $(function() {$('.toolbar').tooltip();});
+    </script>
     <script>
       L.mapbox.accessToken = 'pk.eyJ1IjoiemlhLW0iLCJhIjoiQjM5aVpfTSJ9.s_U7YxQCK-Zq5SaJemH5bA';
       var minlatbound = 35.743219, minlonbound = 25.172975, maxlatbound = 42.335274, maxlonbound = 45.190398;
