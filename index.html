@@ -15,7 +15,7 @@
   <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
   <!-- <link href='css/bootstrap-glyphicons-master/css/bootstrap.icon-large.min.css' rel='stylesheet' /> -->
   <link href='css/bootstrap-glyphicons-all-master/glyphicons-free.css' rel='stylesheet' />
-  <link href="css/sidebar_menu.css" rel="stylesheet">
+  <link href="css/sidebarMenu.css" rel="stylesheet">
 
 </head>
 <body>
@@ -264,26 +264,14 @@
     <script src='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.js'></script>
     <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.0.0/Chart.js"></script>
-    <script src="js/sidebar_menu.js"></script>
-    <script>
+    <!-- <script>
     // This script is to make toolbar button title popup functional
     $(function() {$('.toolbar').tooltip();});
-    </script>
-    <script>
-      L.mapbox.accessToken = 'pk.eyJ1IjoiemlhLW0iLCJhIjoiQjM5aVpfTSJ9.s_U7YxQCK-Zq5SaJemH5bA';
-      var minlatbound = 35.743219, minlonbound = 25.172975, maxlatbound = 42.335274, maxlonbound = 45.190398;
-      var southWestbound = L.latLng(minlatbound, minlonbound),
-          northEastbound = L.latLng(maxlatbound, maxlonbound),
-          bounds = L.latLngBounds(southWestbound, northEastbound);
-
-      var map = L.mapbox.map('map-div', 'mapbox.dark', {
-          maxBounds: bounds,
-          maxZoom: 19,
-          minZoom: 6
-      });
-      map.fitBounds(bounds)
-    </script>
-    <script src="js/test_populationgeojson.js"></script>
-    <script src="js/test_chartpopulation.js"></script>
+    </script> -->
+    <script src="js/sidebarMenu.js"></script>
+    <script src="js/mapLoad.js"></script>
+    <script src="js/testPopulationGeojson.js"></script>
+    <script src="js/testChartPopulation.js"></script>
+    <script src="js/documentLoad.js"></script>
 </body>
 </html>
