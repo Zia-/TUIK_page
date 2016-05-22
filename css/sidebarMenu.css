@@ -116,6 +116,22 @@ i.fa.fa-stack-1x {
     left: -8px;
 }
 
+.select-list {
+    list-style: none;
+}
+
+.select-list li {
+    margin: 5px;
+}
+.select-list li .toggle {
+    margin-right: 5px;
+}
+
+.list-header {
+    background-color: bisque;
+    padding: 5px;
+}
+
 @media(min-width:768px) {
     #wrapper {
         padding-left: 250px;
